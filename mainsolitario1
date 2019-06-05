@@ -1,0 +1,27 @@
+
+public class MainSolitario {
+	public static void main(String[] args) 
+	{ 
+		// Array from 1 to 40 
+		int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 
+				9, 10,1, 2, 3, 4, 5, 6, 7, 8, 
+				9, 10,1, 2, 3, 4, 5, 6, 7, 8, 
+				9, 10,1, 2, 3, 4, 5, 6, 7, 8, 
+				9, 10};
+		int j;
+		double vittorie = 0;
+		int sconfitte = 0;
+		boolean trovato2;
+	    for (j=0; j<100000; j++ ) {
+		Solitario.shuffle(a,40); 
+		trovato2 = Solitario.solitario1(a, 40);
+		if ( trovato2 == false)
+			vittorie ++;
+		else sconfitte ++;
+ }
+	System.out.println(vittorie);
+	System.out.println(sconfitte);
+	System.out.print("la probabilità di vittoria è:");
+	System.out.println(vittorie / 100000);
+} }
+
