@@ -1,0 +1,43 @@
+import java.util.Random; 
+public class Solitario {
+	// Java Code for Shuffle a deck of cards 
+	
+		
+		// Function which shuffle and print the array 
+		public static void shuffle(int card[], int n) { 
+
+			
+			Random rand = new Random(); 
+			
+			for (int i = 0; i < n; i++) 
+			{ 
+				int r = i + rand.nextInt(40 - i); 
+				
+				int temp = card[r]; 
+				card[r] = card[i]; 
+				card[i] = temp; 
+				
+			} 
+		} 
+		public static boolean solitario1 (int card [], int n) {	
+			boolean trovato = false;
+			int i = 0;
+			while (i<n-1 && trovato == false) {	
+				if (card [i] == 1 || card [i+1] == 2 || card [i+2] == 3)
+						trovato = true;
+							
+				else 
+					i =i+3;
+				}
+			if (trovato==false) {
+				if (card[39]==1)
+					trovato=true;
+			}
+		return trovato;	
+				
+		}
+}
+
+		
+		 
+
